@@ -56,7 +56,7 @@ def index():
 
     for param_pair in param_pairs:
         if param_pair[1] is not None and param_pair[1] != '':
-            matching_books = [book for book in matching_books if str(book.get(param_pair[0])).lower() in param_pair[1].lower()]
+            matching_books = [book for book in matching_books if param_pair[1].lower() in str(book.get((param_pair[0]))).lower()]
             
     return jsonify(matching_books)
 
